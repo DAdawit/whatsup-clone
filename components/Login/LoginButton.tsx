@@ -2,10 +2,18 @@ import { Box, Button } from "@mui/material";
 import React from "react";
 import Head from "next/head";
 import GoogleIcon from "@mui/icons-material/Google";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "@/lib/firebase";
 
 const LoginButton = () => {
   const handleSignIn = () => {
-    console.log("hello");
+    signInWithPopup(auth, googleProvider)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        throw new Error(err.message);
+      });
   };
   return (
     <>
