@@ -7,30 +7,38 @@ import { IconButton } from "@mui/material";
 const Search: React.FC = () => {
   return (
     <Box
-      display="flex"
       sx={{
-        backgroundColor: "#ffffff",
-        marginTop: "1px",
-        paddingX: "5px",
-        paddingY: "5px",
+        position: "relative",
       }}
     >
-      <TextField
-        id="input-with-icon-textfield"
-        // label="search"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
+      <Box
+        position="sticky"
+        top="0px"
+        display="flex"
+        sx={{
+          backgroundColor: "#ffffff",
+          marginTop: "1px",
+          paddingX: "5px",
+          paddingY: "5px",
         }}
-        size="small"
-        fullWidth
-      />
-      <IconButton>
-        <FilterListIcon />
-      </IconButton>
+      >
+        <TextField
+          id="input-with-icon-textfield"
+          // label="search"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+          size="small"
+          fullWidth
+        />
+        <IconButton>
+          <FilterListIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 };
