@@ -1,20 +1,13 @@
+"use client";
 import { Box, Button } from "@mui/material";
 import React from "react";
 import Head from "next/head";
 import GoogleIcon from "@mui/icons-material/Google";
-import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "@/lib/firebase";
-
+import { useRouter } from "next/navigation";
+import { handleSignIn } from "./helper";
 const LoginButton = () => {
-  const handleSignIn = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        throw new Error(err.message);
-      });
-  };
+  const router = useRouter();
+
   return (
     <>
       <Head>{/* <title>Login</title> */}</Head>
@@ -22,7 +15,7 @@ const LoginButton = () => {
         <Button
           variant="outlined"
           endIcon={<GoogleIcon />}
-          onClick={handleSignIn}
+          onClick={() => handleSignIn(router)}
         >
           Sign In with google
         </Button>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import ChatSideBar from "@/modules/ChatSideBar";
 import { AllUsers } from "@/type";
 import { getUsers } from "@/lib/firebase/helper";
+import MianScreen from "@/modules/MianScreen";
 
 export default function Home() {
   const [fetchedUsers, setFetchedUsers] = useState<AllUsers | null>(null);
@@ -17,6 +18,7 @@ export default function Home() {
     fetchUsers();
   }, []);
   console.log(fetchedUsers);
+  // console.log(fetchedUsers);
 
   return (
     <main>
@@ -42,22 +44,8 @@ export default function Home() {
 
           <ChatSideBar data={fetchedUsers as any} />
         </Box>
-        <Box
-          sx={{
-            gridColumn: "2/5",
-            backgroundColor: "#F1F2F6",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            src="/whatsapp-bg.png"
-            height="4000"
-            width="4000"
-            alt="bgimage"
-          />
+        <Box display="grid" width="100%">
+          <MianScreen />
         </Box>
       </Box>
     </main>
