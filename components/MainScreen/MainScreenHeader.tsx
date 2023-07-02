@@ -1,27 +1,50 @@
 "use client";
-
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import SignOutButton from "../common/SignOutButton";
 
 const MainScreenHeader: React.FC = () => {
   return (
-    // <Box
-    //   display="flex"
-    //   justifyContent="justify-between"
-    //   alignItems="center"
-    //   sx={{
-    //     width: "100%",
-    //     position: "sticky",
-    //     top: "0",
-    //     backgroundColor: "#eee",
-    //     borderBottom: "1px solid black",
-    //   }}
-    // >
-    //   <Typography>hello</Typography>
-    // </Box>
-    <div className="flex justify-between bg-gray-400 h-20 w-full">
-      <h1>hello</h1>
-      <h1>hello</h1>
-    </div>
+    <Box
+      position="sticky"
+      top="0"
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      height={45}
+      px={2}
+      sx={{
+        width: "100%",
+        backgroundColor: "#eee",
+        borderBottom: "1px solid darkgray",
+      }}
+    >
+      <Box>
+        <IconButton size="large">
+          <AccountCircleIcon />
+        </IconButton>
+      </Box>
+      <Box display="flex" justifyContent="space-evenly" alignItems="center">
+        <IconButton>
+          <VideocamOutlinedIcon />
+        </IconButton>
+        <IconButton>
+          <LocalPhoneOutlinedIcon />
+        </IconButton>
+
+        <IconButton>
+          <SearchOutlinedIcon />
+        </IconButton>
+        <IconButton>
+          <DeleteOutlineOutlinedIcon />
+        </IconButton>
+        <SignOutButton />
+      </Box>
+    </Box>
   );
 };
 

@@ -1,12 +1,16 @@
 import MainScreenHeader from "@/components/MainScreen/MainScreenHeader";
+import MessagesBody from "@/components/MainScreen/MessagesBody";
+import MessageInput from "@/components/MainScreen/MessageInput";
 import { Box } from "@mui/material";
 import React from "react";
 
 const MianScreen = () => {
   return (
-    <Box>
+    <div className="w-full flex flex-col">
       <MainScreenHeader />
-    </Box>
+      <MessagesBody />
+      <MessageInput />
+    </div>
   );
 };
 

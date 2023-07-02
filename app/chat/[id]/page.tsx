@@ -18,36 +18,33 @@ export default function Home() {
     fetchUsers();
   }, []);
   console.log(fetchedUsers);
-  // console.log(fetchedUsers);
 
   return (
-    <main>
+    <Box
+      sx={{
+        display: "flex",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
       <Box
         sx={{
-          display: "grid",
-          gridAutoFlow: "column",
-          gridTemplateColumns: "repeat(4,1fr)",
-          height: "100vh",
-          overflow: "hidden",
+          width: "1/3",
+          backgroundColor: "#eeeeee",
+          minWidth: "250px",
+          overflow: "auto",
         }}
       >
-        <Box
-          sx={{
-            gridColumn: "1/2",
-            backgroundColor: "#eeeeee",
-            width: "100%",
-            minWidth: "250px",
-            overflow: "auto",
-          }}
-        >
-          {/* {fetchedUsers && <ChatSideBar data={fetchedUsers} />} */}
-
-          <ChatSideBar data={fetchedUsers as any} />
-        </Box>
-        <Box display="grid" width="100%">
-          <MianScreen />
-        </Box>
+        <ChatSideBar data={fetchedUsers as any} />
       </Box>
-    </main>
+      <Box
+        sx={{
+          width: "100%",
+          overflowY: "auto",
+        }}
+      >
+        <MianScreen />
+      </Box>
+    </Box>
   );
 }

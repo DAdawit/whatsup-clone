@@ -22,18 +22,15 @@ export default function Home() {
     <main>
       <Box
         sx={{
-          display: "grid",
-          gridAutoFlow: "column",
-          gridTemplateColumns: "repeat(4,1fr)",
+          display: "flex",
           height: "100vh",
           overflow: "hidden",
         }}
       >
         <Box
           sx={{
-            gridColumn: "1/2",
+            width: "1/3",
             backgroundColor: "#eeeeee",
-            width: "100%",
             minWidth: "250px",
             overflow: "auto",
           }}
@@ -44,7 +41,7 @@ export default function Home() {
         </Box>
         <Box
           sx={{
-            gridColumn: "2/5",
+            gridColumn: "1",
             backgroundColor: "#F1F2F6",
             width: "100%",
             display: "flex",
